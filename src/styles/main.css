@@ -1,0 +1,78 @@
+@tailwind base;
+
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  @apply border-b-2 border-blue-700;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #787878;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #575757;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #575757;
+}
+::-webkit-scrollbar-track {
+  background: #e6e6e6;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #e6e6e6;
+}
+::-webkit-scrollbar-track:active {
+  background: #e6e6e6;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+.modal {
+  transition: opacity 0.25s ease;
+}
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+
+.table {
+  border-spacing: 0 15px;
+}
+
+i {
+  font-size: 1rem !important;
+}
+
+.table tr {
+  border-radius: 20px;
+}
+
+tr td:nth-child(n+4),
+tr th:nth-child(n+4) {
+  border-radius: 0 .275rem .275rem 0;
+}
+
+tr td:nth-child(1),
+tr th:nth-child(1) {
+  border-radius: .275rem 0 0 .275rem;
+}
