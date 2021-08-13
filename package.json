@@ -13,6 +13,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.0",
+    "@heroicons/react": "^1.0.3",
     "axios": "^0.21.1",
     "next": "^11.1.0",
     "next-seo": "^4.26.0",
