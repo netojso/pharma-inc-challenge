@@ -31,7 +31,7 @@
 
 ## Layout:
 
-![Home](https://github.com/netojso/figma-land-layout/blob/main/src/assets/figma-land.gif)
+![Home](https://user-images.githubusercontent.com/58404323/129620743-3a93f9b6-9312-4bf9-bd8b-1300a7be244e.mp4)
 
 ## Pré-requisitos
 
