@@ -4,7 +4,7 @@ import { Listbox, Menu, Transition } from '@headlessui/react';
 import { SearchIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon, SelectorIcon } from '@heroicons/react/solid';
 
-import countries from '../utils/countries';
+import countries from '../../utils/countries';
 
 interface SearchInputProps {
   handleSearchUser: (value: string) => void;
@@ -16,7 +16,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   handleFilterByNacionality,
 }) => {
   const [selectedCountryCode, setSelectedCountryCode] = useState<string | null>(
-    null
+    'none'
   );
 
   const selectedCountry = useMemo(() => {

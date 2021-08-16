@@ -1,25 +1,26 @@
 import React, { Fragment } from 'react';
 
 import { Transition, Dialog } from '@headlessui/react';
+import { XIcon } from '@heroicons/react/solid';
 
-import { User } from '../types/User';
+import { User } from '../../types/User';
 
 interface IModalProps {
   user?: User;
   showModal: boolean;
-  setShowModal: () => any;
+  handleModal: () => void;
 }
 export const Modal: React.FC<IModalProps> = ({
   showModal,
   user,
-  setShowModal,
+  handleModal,
 }) => {
   return (
     <Transition appear show={showModal} as={Fragment}>
       <Dialog
         as="div"
         className="fixed inset-0 z-10 overflow-y-auto"
-        onClose={setShowModal}
+        onClose={handleModal}
       >
         <div className="min-h-screen px-4 text-center">
           <Transition.Child
@@ -59,21 +60,14 @@ export const Modal: React.FC<IModalProps> = ({
                     />
                   </div>
                   <button
+                    data-testid="closeButton"
                     type="button"
                     className="modal-close ml-auto cursor-pointer z-50"
                     onClick={() => {
-                      setShowModal();
+                      handleModal();
                     }}
                   >
-                    <svg
-                      className="fill-current text-black"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                    >
-                      <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z" />
-                    </svg>
+                    <XIcon width={20} />
                   </button>
                 </div>
 
@@ -85,19 +79,22 @@ export const Modal: React.FC<IModalProps> = ({
 
                   <div className="grid grid-cols-2 gap-y-2 gap-x-4 w-full mt-4">
                     <p className="text-sm  text-left mt-3">
-                      <strong>Gender:</strong> {user?.gender}
+                      <strong>Gênero:</strong> {user?.gender}
                     </p>
                     <p className="text-sm text-left mt-3">
-                      <strong>Birthdate:</strong> {user?.dob.date}
+                      <strong>D. Nascimento:</strong> {user?.dob.date}
                     </p>
                     <p className="text-sm text-left mt-3">
-                      <strong>Phone:</strong> {user?.phone}
+                      <strong>Telefone:</strong> {user?.cell}
                     </p>
                     <p className="text-sm text-left mt-3">
-                      <strong>Nationality:</strong> {user?.location.country}
+                      <strong>Nacionalidade:</strong> {user?.location.country}
                     </p>
                     <p className="text-sm text-left mt-3">
-                      <strong>Address:</strong> {user?.location.street.name}
+                      <strong>Endereço:</strong>{' '}
+                      {`${`${user?.location.street.name}, `}${
+                        user?.location.street.number
+                      }`}
                     </p>
                   </div>
                 </div>
