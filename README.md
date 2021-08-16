@@ -19,19 +19,20 @@
 ## Descrição do projeto
 
 <p align="justify">
-  [Aplicação desenvolvida como desafio pela coodesh]. 
-  Se trata de uma tela que exibe uma lista de usuários em forma de tabela e com algumas funcionalidades, tais como:
-  - Exibir informações do usuário
-  - Pesquisar usuário por nome
-  - Filtrar por gênero
-  - Filtrar por nacionalidade
+  [Aplicação desenvolvida como desafio pela coodesh]. <br>
+  Se trata de uma tela que exibe uma lista de usuários em forma de tabela e com algumas funcionalidades, tais como: <br>
+  - Exibir informações do usuário; <br>
+  - Pesquisar usuário por nome; <br>
+  - Filtrar por gênero; <br>
+  - Filtrar por nacionalidade; <br>
   - Carregar mais usuários
 </p>
 
 
 ## Layout:
 
-![Home](https://github.com/netojso/figma-land-layout/blob/main/src/assets/figma-land.gif)
+https://user-images.githubusercontent.com/58404323/129621014-af414e10-9cd3-4345-8576-777e5087b374.mp4
+
 
 ## Pré-requisitos
 
@@ -48,7 +49,7 @@ git clone https://github.com/netojso/pharma-inc-challenge.git
 Acesse a pasta raiz do repositório clonado e rode:
 
 ```
-npm install
+cd pharma-inc-challenge && npm install
 ```
 
 No terminal, rode:
@@ -61,9 +62,10 @@ npm run dev
 
 - [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
 - [Next.js](https://nextjs.org/)
-- [TailwindCSS](https://react-pdf.org/)
-- [RandomUserAPI](https://react-pdf.org/)
-
+- [TailwindCSS](https://tailwindcss.com/)
+- [RandomUserAPI](https://randomuser.me/documentation)
+- [TestingLibrary](https://testing-library.com/docs/)
+- [Jest](https://jestjs.io/pt-BR/)
 
 ## Desenvolvedores/Contribuintes :octocat:
 
