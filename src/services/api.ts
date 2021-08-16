@@ -11,8 +11,8 @@ export const getParams = (
 
   if (other) {
     const { gender, natio } = other;
-    if (gender) params += `&gender=${gender}`;
-    if (natio) params += `&nat=${natio}`;
+    if (gender !== 'none') params += `&gender=${gender}`;
+    if (natio !== 'none') params += `&nat=${natio}`;
   } else {
     params += '&seed=foobar';
   }
