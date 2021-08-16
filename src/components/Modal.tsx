@@ -48,7 +48,7 @@ export const Modal: React.FC<IModalProps> = ({
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <div className="inline-block relative w-full max-w-md px-2 py-2 my-8 overflow-unset text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+            <div className="inline-block relative w-full max-w-md px-2 py-2 my-8 overflow-unset text-left align-middle transition-all transform bg-white shadow-xl rounded-sm">
               <div className="modal-content py-4 text-left px-2">
                 <div className="flex justify-center items-center pb-3">
                   <div className="inline-flex absolute -top-16 shadow-lg rounded-full overflow-hidden h-40 w-40">
