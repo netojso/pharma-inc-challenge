@@ -19,7 +19,7 @@
 ## Descrição do projeto
 
 <p align="justify">
-  [Aplicação desenvolvida como desafio pela coodesh]. <br>
+  [Aplicação desenvolvida como desafio pela coodesh](https://lab.coodesh.com/public-challenges/front-end-challenge-2021) <br><br>
   Se trata de uma tela que exibe uma lista de usuários em forma de tabela e com algumas funcionalidades, tais como: <br>
   - Exibir informações do usuário; <br>
   - Pesquisar usuário por nome; <br>
