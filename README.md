@@ -19,12 +19,12 @@
 ## Descrição do projeto
 
 <p align="justify">
-  [Aplicação desenvolvida como desafio pela coodesh]. 
-  Se trata de uma tela que exibe uma lista de usuários em forma de tabela e com algumas funcionalidades, tais como:
-  - Exibir informações do usuário
-  - Pesquisar usuário por nome
-  - Filtrar por gênero
-  - Filtrar por nacionalidade
+  [Aplicação desenvolvida como desafio pela coodesh]. <br>
+  Se trata de uma tela que exibe uma lista de usuários em forma de tabela e com algumas funcionalidades, tais como: <br>
+  - Exibir informações do usuário; <br>
+  - Pesquisar usuário por nome; <br>
+  - Filtrar por gênero; <br>
+  - Filtrar por nacionalidade; <br>
   - Carregar mais usuários
 </p>
 
@@ -62,8 +62,8 @@ npm run dev
 
 - [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
 - [Next.js](https://nextjs.org/)
-- [TailwindCSS](https://react-pdf.org/)
-- [RandomUserAPI](https://react-pdf.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [RandomUserAPI](https://randomuser.me/documentation)
 
 
 ## Desenvolvedores/Contribuintes :octocat:
