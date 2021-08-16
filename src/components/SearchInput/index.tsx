@@ -29,7 +29,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         <SearchIcon width={20} />
         <input
           onChange={(e) => handleSearchUser(e.target.value)}
-          className="bg-gray-100 outline-none"
+          className="bg-gray-100 outline-none placeholder-gray-500"
           type="text"
           placeholder="Pesquise pelo nome"
         />
