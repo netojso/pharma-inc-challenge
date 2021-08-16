@@ -49,7 +49,7 @@ git clone https://github.com/netojso/pharma-inc-challenge.git
 Acesse a pasta raiz do repositório clonado e rode:
 
 ```
-npm install
+cd pharma-inc-challenge && npm install
 ```
 
 No terminal, rode:
@@ -64,7 +64,8 @@ npm run dev
 - [Next.js](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [RandomUserAPI](https://randomuser.me/documentation)
-
+- [TestingLibrary](https://testing-library.com/docs/)
+- [Jest](https://jestjs.io/pt-BR/)
 
 ## Desenvolvedores/Contribuintes :octocat:
 
