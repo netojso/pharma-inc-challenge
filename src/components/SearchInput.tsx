@@ -1,18 +1,23 @@
 import React, { Fragment, useState, useMemo } from 'react';
 
 import { Listbox, Menu, Transition } from '@headlessui/react';
+import { SearchIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon, SelectorIcon } from '@heroicons/react/solid';
 
 import countries from '../utils/countries';
 
 interface SearchInputProps {
   handleSearchUser: (value: string) => void;
+  handleFilterByNacionality: (natio: string | null) => any;
 }
 
 export const SearchInput: React.FC<SearchInputProps> = ({
   handleSearchUser,
+  handleFilterByNacionality,
 }) => {
-  const [selectedCountryCode, setSelectedCountryCode] = useState<string>();
+  const [selectedCountryCode, setSelectedCountryCode] = useState<string | null>(
+    null
+  );
 
   const selectedCountry = useMemo(() => {
     return countries.find((country) => country.code === selectedCountryCode);
@@ -21,20 +26,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   return (
     <div className="flex items-center justify-between py-1 px-4 space-x-20 bg-white my-6 rounded-md shadow-lg hover:shadow-xl transform hover:scale-101 transition duration-500">
       <div className="flex bg-gray-100 w-72 space-x-6 rounded-lg">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 opacity-30"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-          />
-        </svg>
+        <SearchIcon width={20} />
         <input
           onChange={(e) => handleSearchUser(e.target.value)}
           className="bg-gray-100 outline-none"
@@ -68,7 +60,8 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                   <Listbox
                     value={selectedCountry?.code}
                     onChange={(value) => {
-                      setSelectedCountryCode(value);
+                      handleFilterByNacionality(value || null);
+                      setSelectedCountryCode(value || null);
                     }}
                   >
                     {({ open: openList }) => (

@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 
 import { Menu, RadioGroup, Transition } from '@headlessui/react';
+import { EyeIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon, CheckIcon } from '@heroicons/react/solid';
 
 import { User } from '../types/User';
@@ -8,10 +9,15 @@ import { User } from '../types/User';
 interface ITableProps {
   users: User[];
   handleModal: (user?: User) => void;
+  handleSelectGender: (gender: string | null | undefined) => any;
 }
 
-export const Table: React.FC<ITableProps> = ({ users, handleModal }) => {
-  const [selectedGender, setSelectedGender] = useState();
+export const Table: React.FC<ITableProps> = ({
+  users,
+  handleModal,
+  handleSelectGender,
+}) => {
+  const [selectedGender, setSelectedGender] = useState<string | null>();
 
   return (
     <table className="table text-gray-400 border-separate text-sm mr-2 mt-6">
@@ -45,25 +51,19 @@ export const Table: React.FC<ITableProps> = ({ users, handleModal }) => {
                         className="flex space-x-2 p-1 tooptipGender"
                         value={selectedGender}
                         onChange={(value) => {
-                          setSelectedGender(value);
+                          if (value === selectedGender) {
+                            handleSelectGender(null);
+                            setSelectedGender(null);
+                          } else {
+                            handleSelectGender(value);
+                            setSelectedGender(value);
+                          }
                         }}
                       >
                         <RadioGroup.Option
                           key="male"
                           value="male"
-                          className={({ active, checked }) =>
-                            `${
-                              active
-                                ? 'ring-2 ring-offset-2 ring-offset-sky-300 ring-white ring-opacity-60'
-                                : ''
-                            }
-                                    ${
-                                      checked
-                                        ? 'bg-sky-900 bg-opacity-75 text-white'
-                                        : 'bg-white'
-                                    }
-                                      relative rounded-lg shadow-md px-5 py-1 cursor-pointer flex focus:outline-none`
-                          }
+                          className="relative rounded-lg shadow-lg px-5 py-1 cursor-pointer flex focus:outline-none"
                         >
                           {({ checked }) => (
                             <>
@@ -72,10 +72,8 @@ export const Table: React.FC<ITableProps> = ({ users, handleModal }) => {
                                   <div className="text-sm">
                                     <RadioGroup.Label
                                       as="p"
-                                      className={`font-medium  ${
-                                        checked
-                                          ? 'text-gray-900'
-                                          : 'text-gray-900'
+                                      className={`text-gray-900 ${
+                                        checked ? 'font-bold' : 'font-medium'
                                       }`}
                                     >
                                       Masculino
@@ -94,19 +92,7 @@ export const Table: React.FC<ITableProps> = ({ users, handleModal }) => {
                         <RadioGroup.Option
                           key="female"
                           value="female"
-                          className={({ active, checked }) =>
-                            `${
-                              active
-                                ? 'ring-2 ring-offset-2 ring-offset-sky-300 ring-white ring-opacity-60'
-                                : ''
-                            }
-                                    ${
-                                      checked
-                                        ? 'bg-sky-900 bg-opacity-75 text-white'
-                                        : 'bg-white'
-                                    }
-                                      relative rounded-lg shadow-md px-5 py-1 cursor-pointer flex focus:outline-none`
-                          }
+                          className="relative rounded-lg shadow-lg px-5 py-1 cursor-pointer flex focus:outline-none"
                         >
                           {({ checked }) => (
                             <>
@@ -115,10 +101,8 @@ export const Table: React.FC<ITableProps> = ({ users, handleModal }) => {
                                   <div className="text-sm">
                                     <RadioGroup.Label
                                       as="p"
-                                      className={`font-medium  ${
-                                        checked
-                                          ? 'text-gray-900'
-                                          : 'text-gray-900'
+                                      className={`text-gray-900  ${
+                                        checked ? 'font-bold' : 'font-medium'
                                       }`}
                                     >
                                       Feminino
@@ -151,7 +135,7 @@ export const Table: React.FC<ITableProps> = ({ users, handleModal }) => {
             <td className="p-3">
               <div className="flex align-items-center">
                 <img
-                  className="rounded-full h-12 w-12  object-cover"
+                  className="rounded-full h-12 w-12 object-cover"
                   src={user.picture.medium}
                   alt="unsplash"
                 />
@@ -169,21 +153,7 @@ export const Table: React.FC<ITableProps> = ({ users, handleModal }) => {
                 className="btn"
                 onClick={() => handleModal(user)}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="feather feather-eye"
-                >
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
+                <EyeIcon width={20} color="#fff" />
               </button>
             </td>
           </tr>
