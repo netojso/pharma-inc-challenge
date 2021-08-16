@@ -20,7 +20,6 @@
 
   [Aplicação desenvolvida como desafio pela coodesh](https://lab.coodesh.com/public-challenges/front-end-challenge-2021) <br><br>
 <p align="justify">
-  
   Se trata de uma tela que exibe uma lista de usuários em forma de tabela e com algumas funcionalidades, tais como: <br>
   - Exibir informações do usuário; <br>
   - Pesquisar usuário por nome; <br>
@@ -72,7 +71,3 @@ npm run dev
 
 **Linkedin:** [Octacilio Serafim](https://www.linkedin.com/in/octacilio-serafim/)
 
-
-## Licença
-
-The [MIT License]() (MIT)
