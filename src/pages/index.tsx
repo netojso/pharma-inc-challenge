@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { GetServerSideProps } from 'next';
-import router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 import { Modal, SearchInput, Table } from '../components';
 import { api, getParams } from '../services/api';
@@ -23,7 +23,8 @@ export default function Home({ users: usersApi }: IMainProps) {
   const [selectedNatio, setSelectedNatio] = useState<string | null>();
   const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
 
-  const page = useRouter().query.page as string;
+  const router = useRouter();
+  const page = router.query.page as string;
 
   useEffect(() => {
     if (selectedGender || selectedNatio) {
@@ -33,8 +34,9 @@ export default function Home({ users: usersApi }: IMainProps) {
       });
 
       api.get(urlParams).then((response) => {
-        const filteredUsers = formatUserData(response.data);
-        setUsers(filteredUsers);
+        const formattedUsers = formatUserData(response.data);
+        setSearchedUsers(null);
+        setUsers(formattedUsers);
       });
     }
 
